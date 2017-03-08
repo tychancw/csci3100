@@ -2,7 +2,7 @@
 	include_once "_partial/header.php";
 	include_once "_partial/homenav.php";
 ?>
-    <!-- Section: intro -->
+    <!-- Section: intro ------------>
     <section id="intro" class="intro">
     
         <div class="slogan">
