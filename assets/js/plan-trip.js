@@ -1,24 +1,19 @@
 $(function() {
-	      var nowTemp = new Date();
-	      var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-	      var checkin = $('#checkin').datepicker({
-	        onRender: function(date) {
-	          return date.valueOf() < now.valueOf() ? 'disabled' : '';
-	        }
-	      }).on('changeDate', function(ev) {
-	        if (ev.date.valueOf() > checkout.date.valueOf()) {
-	          var newDate = new Date(ev.date)
-	          newDate.setDate(newDate.getDate() + 1);
-	          checkout.setValue(newDate);
-	        }
-	        checkin.hide();
-	        $('#checkout')[0].focus();
-	      }).data('datepicker');
-	      var checkout = $('#checkout').datepicker({
-	        onRender: function(date) {
-	          return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-	        }
-	      }).on('changeDate', function(ev) {
-	        checkout.hide();
-	      }).data('datepicker');
-	    });
+      var now =new Date()
+	  now.setDate(new Date().getDate());
+	  var tripstart = $('#tripstart').datepicker({
+	        minDate: now,
+	        dateFormat: "dd-M-yy",
+	      	onSelect: function(dateText, inst) {
+	    	// Get the selected date
+	    	var inDate = new Date($(this).val());
+	    		// Set the minimum date for the check out option to the selected date
+	    		$("#tripend").datepicker('option', 'minDate', inDate);
+			}
+		}).data('datepicker');
+
+	    var tripend = $('#tripend').datepicker({
+	        minDate: now,
+	        dateFormat: "dd-M-yy"
+	    }).data('datepicker');
+});

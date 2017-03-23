@@ -376,6 +376,69 @@ hr {
     text-shadow: -1px 1px 1px #000;
 }
 
+/* ===========================
+--- Section background
+============================ */
+.plantrip-background{
+    height:15%;
+    position:relative;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.1), 
+            rgba(0, 0, 0, 0.1)
+        ),
+        url(../img/plan-bg.jpg) 
+        no-repeat 
+        top 
+        center  
+        ;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#intro.plantrip-background {
+    padding:10%;
+}
+
+.plantrip-background .slogan {
+    text-align: center;
+
+}
+
+.plantrip-background .page-scroll {
+    text-align: center;
+}
+
+.plantrip-background-heading {
+    font-size: 40px;
+}
+
+.intro-text {
+    font-size: 18px;
+}
+
+.plantrip-background .slogan h3 {
+    color: #FFF;
+    text-shadow: none;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 0px;
+    border-color: #000;
+    border-style: none;
+    text-shadow: -1px 0 1px #000;
+}
+
+.plantrip-background .slogan h4 {
+    color: #fff;
+    text-shadow: -1px 1px 1px #000;
+}
 
 /* ===========================
 --- Trip HomePage Plan Panel
@@ -960,6 +1023,11 @@ Parallax
         padding: 0;
     }
 
+    .plantrip-background {
+        height: 15%;
+        padding: 0;
+    }
+
     .brand-heading {
         font-size: 100px;
     }
@@ -1190,3 +1258,81 @@ button.select{
     text-align:center;
     color: #fff;
 }
+
+/* #########################################
+   #    Timeline Planning     #
+   ######################################### */
+
+div.dates-container{
+  z-index: 10;
+  background-color: #ffffff;
+  padding: 0 !important;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border:1px solid #ddd;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  background-clip: padding-box;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+  max-height: 800px;
+  overflow-y: scroll;
+}
+div.dates-menu{
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+div.dates-menu div.list-group{
+  margin-bottom: 0;
+}
+div.dates-menu div.list-group>a{
+  margin-bottom: 0;
+}
+div.dates-menu div.list-group>a .glyphicon,
+div.dates-menu div.list-group>a .fa {
+  color: #67b0d1;
+}
+div.dates-menu div.list-group>a:first-child{
+  border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+}
+div.dates-menu div.list-group>a:last-child{
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+}
+div.dates-menu div.list-group>a.active,
+div.dates-menu div.list-group>a.active .glyphicon,
+div.dates-menu div.list-group>a.active .fa{
+  background-color: #67b0d1;
+  background-image: #67b0d1;
+  color: #fff;
+}
+div.dates-menu div.list-group>a.active:after{
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -13px;
+  border-left: 0;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  border-left: 10px solid #67b0d1;
+}
+
+div.dates-content{
+  background-color: #ffffff;
+  /* border: 1px solid #eeeeee; */
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+div.dates-timeline div.dates-content:not(.active){
+  display: none;
+}
+
+
